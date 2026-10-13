@@ -1,0 +1,13 @@
+{
+  "name": "topxai",
+  "owner": { "name": "TopxAI", "url": "https://ai.topxea.com" },
+  "metadata": { "description": "Agent plugins from TopxAI (ai.topxea.com)." },
+  "plugins": [
+    {
+      "name": "topxai-equity-research",
+      "source": "./",
+      "description": "Institutional-grade equity research workflow for AI agents: filings-first data, falsifiable calls, bull/bear debate, audits and a settled call ledger.",
+      "category": "finance"
+    }
+  ]
+}

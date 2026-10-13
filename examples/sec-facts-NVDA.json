@@ -1,0 +1,199 @@
+{
+    "ticker": "NVDA",
+    "cik": 1045810,
+    "entity": "NVIDIA CORP",
+    "currency": "USD",
+    "evidence": "A",
+    "source": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json",
+    "quarters": [
+        {
+            "q": "CY2024Q3",
+            "revenue": 35082000000,
+            "grossProfit": 26156000000,
+            "opIncome": 21869000000,
+            "netIncome": 19309000000,
+            "ocf": 17627000000,
+            "capex": 813000000
+        },
+        {
+            "q": "CY2024Q4",
+            "revenue": 39331000000,
+            "grossProfit": 28723000000,
+            "opIncome": 24034000000,
+            "netIncome": 22091000000,
+            "ocf": 16629000000,
+            "capex": 1077000000
+        },
+        {
+            "q": "CY2025Q1",
+            "revenue": 44062000000,
+            "grossProfit": 26668000000,
+            "opIncome": 21638000000,
+            "netIncome": 18775000000,
+            "ocf": 27414000000,
+            "capex": 1227000000
+        },
+        {
+            "q": "CY2025Q2",
+            "revenue": 46743000000,
+            "grossProfit": 33853000000,
+            "opIncome": 28440000000,
+            "netIncome": 26422000000,
+            "ocf": 15365000000,
+            "capex": 1895000000
+        },
+        {
+            "q": "CY2025Q3",
+            "revenue": 57006000000,
+            "grossProfit": 41849000000,
+            "opIncome": 36010000000,
+            "netIncome": 31910000000,
+            "ocf": 23751000000,
+            "capex": 1636000000
+        },
+        {
+            "q": "CY2025Q4",
+            "revenue": 68127000000,
+            "grossProfit": 51093000000,
+            "opIncome": 44299000000,
+            "netIncome": 42960000000,
+            "ocf": 36188000000,
+            "capex": 1284000000
+        },
+        {
+            "q": "CY2026Q1",
+            "revenue": 81615000000,
+            "grossProfit": 61157000000,
+            "opIncome": 53536000000,
+            "netIncome": 58321000000,
+            "ocf": 50344000000,
+            "capex": 1757000000
+        },
+        {
+            "q": "CY2026Q2",
+            "revenue": 96221000000,
+            "grossProfit": 72142000000,
+            "opIncome": 63734000000,
+            "netIncome": 59688000000,
+            "ocf": 24077000000,
+            "capex": 2677000000
+        }
+    ],
+    "latest": {
+        "revenue": {
+            "val": 96221000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:Revenues",
+            "quarter": "CY2026Q2"
+        },
+        "grossProfit": {
+            "val": 72142000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:GrossProfit",
+            "quarter": "CY2026Q2"
+        },
+        "opIncome": {
+            "val": 63734000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:OperatingIncomeLoss",
+            "quarter": "CY2026Q2"
+        },
+        "netIncome": {
+            "val": 59688000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:NetIncomeLoss",
+            "quarter": "CY2026Q2"
+        },
+        "ocf": {
+            "val": 24077000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:NetCashProvidedByUsedInOperatingActivities",
+            "quarter": "CY2026Q2",
+            "derivedQ": true
+        },
+        "capex": {
+            "val": 2677000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:PaymentsToAcquireProductiveAssets",
+            "quarter": "CY2026Q2",
+            "derivedQ": true
+        },
+        "cash": {
+            "val": 22443000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:CashAndCashEquivalentsAtCarryingValue",
+            "unit": "USD"
+        },
+        "debt": {
+            "val": 33366000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:LongTermDebt",
+            "unit": "USD"
+        },
+        "rpo": {
+            "val": 3200000000,
+            "end": "2026-07-26",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "us-gaap:RevenueRemainingPerformanceObligation",
+            "unit": "USD"
+        },
+        "shares": {
+            "val": 24100000000,
+            "end": "2026-08-21",
+            "form": "10-Q",
+            "filed": "2026-08-26",
+            "tag": "dei:EntityCommonStockSharesOutstanding",
+            "unit": "shares"
+        }
+    },
+    "annual": {
+        "revenue": {
+            "2023": 60922000000,
+            "2024": 130497000000,
+            "2025": 215938000000
+        },
+        "grossProfit": {
+            "2023": 44301000000,
+            "2024": 97858000000,
+            "2025": 153463000000
+        },
+        "opIncome": {
+            "2023": 32972000000,
+            "2024": 81453000000,
+            "2025": 130387000000
+        },
+        "netIncome": {
+            "2023": 29760000000,
+            "2024": 72880000000,
+            "2025": 120067000000
+        },
+        "ocf": {
+            "2023": 28090000000,
+            "2024": 64089000000,
+            "2025": 102718000000
+        },
+        "capex": {
+            "2023": 1069000000,
+            "2024": 3236000000,
+            "2025": 6042000000
+        }
+    },
+    "notes": []
+}

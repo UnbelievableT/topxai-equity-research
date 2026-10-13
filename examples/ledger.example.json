@@ -1,0 +1,20 @@
+{
+ "version": 1,
+ "calls": [
+  {
+   "id": 1, "report": "example-co-deep-dive-2026-10", "series": "EXAMPLE", "tier": "annual",
+   "claim": "FORMAT EXAMPLE ONLY, not a real call. Annual rating: underweight; 12-month target $40 (scenarios $25 / $38 / $60, weights 30 / 50 / 20).",
+   "falsifier": "Relative return vs S&P 500 total return above -10% at settlement, or 20 consecutive closes above $75.",
+   "horizon_months": 12, "benchmark": "S&P 500 total return", "issued_at": "2026-10-06",
+   "outcome": "pending", "settled_at": null, "evidence": null, "settled_by": null, "note": null, "registered_at": "2026-10-06"
+  },
+  {
+   "id": 2, "report": "example-co-deep-dive-2026-10", "series": "EXAMPLE", "tier": "monthly",
+   "claim": "FORMAT EXAMPLE ONLY. Monthly outlook: no refinancing 8-K before the window closes.",
+   "falsifier": "From 2026-10-06, settled 2026-11-06. Settled on events, not on price.",
+   "horizon_months": 1, "benchmark": "EDGAR 8-K filings", "issued_at": "2026-10-06",
+   "outcome": "hit", "settled_at": "2026-11-06", "evidence": "No 8-K filed in the window (EDGAR search, accessed 2026-11-06).",
+   "settled_by": null, "note": null, "registered_at": "2026-10-06"
+  }
+ ]
+}

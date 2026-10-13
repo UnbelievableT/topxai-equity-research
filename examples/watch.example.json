@@ -1,0 +1,16 @@
+{
+  "series": {
+    "EXAMPLE": {
+      "ticker": "EXAMPLE",
+      "report": "example-co-deep-dive-2026-10",
+      "rating": {"call": 1, "label": "underweight", "start": "2026-10-06", "start_price": null,
+                 "benchmark": {"SPY": null}, "method": "diff"},
+      "triggers": [
+        {"call": 1, "kind": "consec_above", "level": 75, "days": 20, "note": "Format example: the report's price failure condition."}
+      ],
+      "events": [
+        {"tier": "monthly", "call": 2, "due": "2026-11-06", "what": "No refinancing 8-K in the window", "source": "research/example-co-deep-dive-2026-10/parts/p01-summary.md:120"}
+      ]
+    }
+  }
+}
