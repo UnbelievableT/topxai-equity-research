@@ -201,7 +201,7 @@ Three tiers:
 
 ## 9. Pre-release final check
 
-Write the final check to `research/<slug>/checks.md`, one result per item: **pass / fixed / n/a**.
+Write the final check to `research/<slug>/checks.md`, one result per item: **passed / fixed / n/a**.
 "Fixed" and "n/a" must carry one sentence (what was changed and why, or why the item does not apply). A tick with no note counts as unchecked.
 The point is that the result can be verified, and afterwards you can trace which item let an error through.
 

@@ -335,7 +335,7 @@ def cmd_feed(a) -> None:
     else:
         watch = Path(os.environ.get("RESEARCH_WATCH", "research/watch.json"))
         if not watch.exists():
-            raise SystemExit(f"{watch} not found; pass --tickers A,B or create it from assets/templates/watch-entry.json")
+            raise SystemExit(f"{watch} not found; use --tickers A,B or create it from assets/templates/watch-entry.json")
         tickers = [s["ticker"] for s in json.loads(watch.read_text())["series"].values()]
     since = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=a.hours)
     for t in tickers:

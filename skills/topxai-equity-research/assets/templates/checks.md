@@ -1,6 +1,6 @@
 # <TICKER> pre-publication checks
 
-> Template. Save as `research/<report-id>/checks.md`. Each row gets one result: pass / fixed / n/a. "fixed" and "n/a" need
+> Template. Save as `research/<report-id>/checks.md`. Each row gets one result: passed / fixed / n/a. "fixed" and "n/a" need
 > a sentence. A row ticked without a note counts as not checked.
 > Sources: `references/judgment.md` section 9 and the implementation checklist in `references/quality-bar.md`.
 

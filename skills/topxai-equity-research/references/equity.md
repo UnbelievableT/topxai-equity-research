@@ -6,7 +6,7 @@
 **Why equity needs two passes.** A stock is the end of the chain. A company's profit is whatever is left after L1-L3 have
 passed value down the chain. So run **two passes**. First go top-down and place the company in the chain: what entitles it
 to this share of the profit. Then go bottom-up and test its own ability to deliver: can it actually collect that share.
-Doing only the second pass produces a restatement of the earnings release, not research.
+Doing only the second step produces a restatement of the earnings release, not research.
 
 Notation used below: **[Cause]**, **[Process]**, **[Outcome]** are the cause / process / outcome classes from the framework.
 **[Fixed]**, **[Probabilistic]**, **[Unknown]** are the certainty tiers. Evidence grades are [A]-[D]. E1-E5 are the
@@ -253,7 +253,7 @@ Pre-publication self-check:
    bull-bear comparison / falsification conditions and observation calendar / known limitations / **misreading-prevention
    section** / **audit revision log**.
 2. Work through the **tradability final check** in `references/judgment.md` section 9 item by item, and write the result into
-   `checks.md` (pass / fixed / n/a, with a note).
+   `checks.md` (passed / fixed / n/a, with a note).
 3. Use the `assets/disclaimer.md` template verbatim for the disclaimer and conflicts of interest. Write out all four conflict
    items one by one, including "none".
 4. Tick off the landing checklist in `references/quality-bar.md` item by item (all three horizons of outlook present / decision

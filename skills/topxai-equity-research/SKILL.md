@@ -36,7 +36,7 @@ multi-language editions must match number for number (see `references/pipeline/0
 **First run in a project.** Scripts live in this skill's `scripts/` folder (the skill's base directory is shown when
 it loads). Run them from the project root so their files land in the project's `research/` folder. The SEC tool needs
 a contact string: SEC contact configured for this plugin: `${user_config.sec_user_agent}`. If that is empty or still a
-placeholder, ask the user once for a name and email and pass it as `SEC_USER_AGENT="Name email"` on each call.
+placeholder, ask the user once for a name and email and supply it as `SEC_USER_AGENT="Name email"` on each call.
 
 ## Hard rules (break one and the report does not ship)
 

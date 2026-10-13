@@ -232,6 +232,6 @@ The **fixed internal structure of each link chapter** (it keeps the rhythm of th
   "original wording → revised wording → nature of change", in Appendix C.
 - Pre-publication self-check: (1) go through the landing checklist in `quality-bar.md` item by item; (2) the eight components of
   framework section 5 (including the misreading-prevention section and the audit revision log); (3) the tradability final check
-  in `references/judgment.md` section 9, with the result written to `checks.md` (pass / fixed / n/a, with a note).
+  in `references/judgment.md` section 9, with the result written to `checks.md` (passed / fixed / n/a, with a note).
 - Use the template in `assets/disclaimer.md` verbatim for the disclaimer and conflicts of interest.
 - Publishing, ledger registration and watch registration follow `references/pipeline/05-publish.md`. Later updates follow `references/pipeline/06-updates.md`.
