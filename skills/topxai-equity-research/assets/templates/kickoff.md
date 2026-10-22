@@ -3,6 +3,28 @@
 > Template. Save as `research/<report-id>/notes-00-kickoff.md`.
 > Procedure: `references/pipeline/01-kickoff.md`.
 
+## One-sentence claim (gate, `investigative.md` section 1)
+One falsifiable claim with a per-share impact (rough; state the share count basis and the timing). Example: "The company
+should be liable for about $20 billion, roughly $20 a share after tax, discounted."
+
+## Value bridge
+The mechanism that turns facts into money (cap and exceptions / covenants and maturities / contract terms / dilution
+channels / rate base / accounting triggers / funding gap). Name the inputs of the bridge; every new fact must land on one.
+
+## New facts (at least three, gate, `investigative.md` section 2)
+| # | Fact (text or number) | Source (document, page / section / table, date, URL) | Why the market missed it | Which bridge input it changes, and by how much |
+|---|---|---|---|---|
+| F1 | | | | |
+| F2 | | | | |
+| F3 | | | | |
+
+Fewer than three: write "do not publish" or "downgrade to a short note", with restart triggers. Re-computed filed numbers
+do not count as new facts.
+
+## How management will answer
+Management's most likely response to the claim (quote existing public statements) and the facts it depends on; research
+those facts.
+
 ## Core tension
 One or two sentences: what the market currently treats this company as, and where we suspect that is wrong. If you cannot
 state a tension, go back to the candidate comparison.
@@ -36,6 +58,8 @@ avoids it".
 | Lane key | Role | Question list source | Output | Token limit |
 |---|---|---|---|---|
 | financials | research-collector | equity.md Step ... | notes-financials.md / data-financials.json | |
+| records | research-collector | investigative.md section 2 (primary records beyond the SEC statements) and checking F1-F3 | notes-records.md / data-records.json | |
+| statements | research-collector | investigative.md sections 3 and 5 (the company's own words over time, to regulators and investors; management's defence) | notes-statements.md / data-statements.json | |
 | ... | | | | |
 | xbrl-independent | the editor | none | notes-xbrl-independent.md | |
 

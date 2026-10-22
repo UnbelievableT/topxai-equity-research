@@ -1,6 +1,6 @@
 ---
 name: research-collector
-description: One research lane of an equity / industry / macro report (financials, contracts, governance, power, peers, market...). Use when the editor assigns a lane; writes notes-<key>.md and data-<key>.json, never the report body or the rating.
+description: One research lane of an equity / industry / macro report (financials, contracts, governance, power, peers, market, records, statements...). Use when the editor assigns a lane; writes notes-<key>.md and data-<key>.json, never the report body or the rating.
 model: sonnet
 effort: high
 disallowedTools: Agent
@@ -16,7 +16,10 @@ Rules (breaking one means the lane is redone):
    Write the skeleton first (header metadata and one empty section per question), then fill section by section.
    Only the files count as output.
 2. **Do not spawn sub-tasks.** Agent spawning is disabled for this role; do not route around it.
-3. **Every number carries four things**: source URL, publication date, access date, evidence grade [A]-[D].
+3. **Every number carries five things**: source URL, **location** (page, section, table, note number, Item or slide),
+   publication date, access date, evidence grade [A]-[D]. Quote the company's or a regulator's words **verbatim**, in
+   quotation marks; footnotes and exhibits (`scripts/exhibit.py`) are built from these records. A number without a
+   location cannot be footnoted, so the item is not done.
    If you cannot find it, write "not verified". Never present an estimate as a reported figure; mark estimates [C]
    and show the formula.
 4. **Raw responses stay out of the conversation.** For SEC data use `python3 scripts/sec.py facts <TICKER>` and

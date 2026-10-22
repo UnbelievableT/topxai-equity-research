@@ -18,6 +18,13 @@
   candidate comparison, count how many open ratings share the new candidate's factor exposure. Several underweights on the
   same high-beta theme will all flip in one rally, and the scoreboard then measures one market move. This is one input to
   the choice. It never changes the rule that a rating follows the evidence.
+- **Claim and new-facts gate** (`investigative.md` sections 1 and 2). Write three things before anything else, or do not
+  start: (1) one falsifiable claim with a per-share impact (a rough figure is fine; state the basis); (2) the value bridge,
+  the mechanism that turns facts into money; (3) at least three new facts, each with its text and location (page, section or
+  table), why the market missed it, and which input of the bridge it changes. In the candidate comparison, score
+  "difference from existing coverage" on the number and weight of new facts. A topic that only re-computes filed numbers
+  is not started, however dense its evidence. Add one line on how management is likely to answer the claim, and research
+  the facts that answer depends on.
 - **The kickoff brief** is `research/<report-id>/notes-00-kickoff.md`. It holds: the verdict and reasons; the data basis
   date at three layers (hard rule 3 in `SKILL.md`); the rating benchmark (default: S&P 500 total return, or a more
   investable index when `judgment.md` section 4 supports one); hard constraints on form (do not repeat the previous

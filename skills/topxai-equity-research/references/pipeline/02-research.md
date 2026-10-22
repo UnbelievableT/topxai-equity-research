@@ -9,6 +9,17 @@
   lane produces `notes-<key>.md` and `data-<key>.json`. Every notes file opens with the same header: key; data basis date;
   filing cutoff; evidence grade; attribute tag (cause, process or outcome); structured data file; list of primary documents
   (every one with a URL). Add a lane when the subject needs one, such as peer valuation.
+- **Two more lanes since 1.1.0** (`investigative.md`); most new facts come from them:
+  - `records`: primary records beyond the SEC statements: 8-K exhibits and full contracts, SEC correspondence, regulatory
+    dockets, interconnection queues, court and bankruptcy files, local permits and hearing minutes, procurement records,
+    satellite measurements and outside data. Check the kickoff's F1-F3 first, then look for more.
+  - `statements`: the company's own words: past investor decks, calls, responses to regulators, old web pages (Wayback
+    Machine), management interviews. Three outputs: a statement comparison table, a year-by-year statement timeline, and a
+    list of management's public statements on the points in dispute (taken apart in Part 3 of the report).
+- **How every fact is recorded** (all lanes): the original text quoted verbatim, its location (page, section, table, note
+  number, Item or slide), the document name and date, the URL and the evidence grade. Footnotes are written from these
+  records and exhibits are cut at the same location (`scripts/exhibit.py`). A number recorded without a location cannot be
+  footnoted; go back for it.
 - **Pull SEC data through `scripts/sec.py` first.** `python3 scripts/sec.py facts <TICKER>` gives the last eight quarters
   of flows and the latest point-in-time values. A derived quarter (Q4 = full year minus three quarters) is tagged `derivedQ`,
   and a tag that has not been updated for years is tagged `stale`. `python3 scripts/sec.py filings <TICKER>` gives recent
@@ -36,7 +47,7 @@
   the same chain the `data-peers.json` and `data-market.json` of the previous one. Reuse their pipelines and fields.
 - **Confirm each key number from at least two independent sources.** For earnings-call quotes, cross-check two independent
   transcripts.
-- **Record every source**: publisher, file name, date, URL, access date. These records become Appendix B.
+- **Record every source**: publisher, file name, location (page, section, table), date, URL, access date. Footnotes and the source list in the appendix are written from these records.
 - First time you use a source listed in `indicators.md`, **open it and check the current definition**. If it does not
   match, fix that file on the spot.
 - "Must answer" means **you must determine whether the answer is obtainable and record the finding**. It does not mean

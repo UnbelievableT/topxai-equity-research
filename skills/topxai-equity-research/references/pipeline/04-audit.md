@@ -2,16 +2,17 @@
 
 > This is step 4 of the pipeline in `SKILL.md`. Previous step: `03-writing.md`. Next step: `05-publish.md`.
 
-The goal is to **find errors**, not to confirm that the report passes. The current form is **two rounds, four to five
-lanes, with a skeptic lane and a cross-edition consistency lane**:
+The goal is to **find errors**, not to confirm that the report passes. The current form is **two rounds, five lanes each,
+with a verifiability lane, a skeptic lane and a cross-edition consistency lane** (the verifiability lane was added in 1.1.0):
 
 | Round | Lane | What it checks |
 |---|---|---|
-| **Round 1** (primary-language draft), four lanes | 1. Financials, capital structure, valuation | Must re-run `python3 calc/model.py` and diff against the output file, then read the body |
+| **Round 1** (primary-language draft), five lanes | 1. Financials, capital structure, valuation | Must re-run `python3 calc/model.py` and diff against the output file, then read the body |
 | | 2. Contracts, counterparties, sites, governance | Compare every item with the primary document (fetch the original from EDGAR with a self-identifying user agent) |
 | | 3. Tradability, summary and risks, procedure compliance | Go through `judgment.md` section by section: does the conclusion rest on a mispricing that has evidence, does the catalyst path hold, can the rating be settled, is the payload-chain grade high enough, do the probabilities have a basis |
-| | 4. Appearance and copy | `quality-bar.md` sections 3, 4, 5 and 7: headline formula, chart form, layout repetition, decorative indicators; scan the draft for filler, hype and templated phrasing |
-| **Round 2** (after the dispositions produce v2 and the second-language edition is synced), five lanes | Skeptic | Stand on the opposite side of the rating. Using the report's own data and **changing parameters only, never formulas**, re-run the model and give the combination of assumptions that would flip the rating, with its evidence grade. Also check that the owner of every judgment sentence is clear at a glance |
+| | 4. Appearance and copy | `quality-bar.md` sections 3, 4, 5 and 7: headline formula, chart form, layout repetition, decorative indicators; scan the draft for filler, hype and templated phrasing; run `scripts/check_report.py` first and log every failed gate as a finding |
+| | 5. Verifiability and originals | Can a reader trace each source back to its sentence? Open 30 randomly chosen footnotes and every exhibit source, go to the stated page, section or table, and check that the text and numbers are there and that no quotation was altered or cut out of context. Check that each "new fact" is really new (search mainstream financial media and sell-side summaries; a widely reported fact becomes background) and not overstated. Check that the company quotes in Part 3 are verbatim and correctly dated |
+| **Round 2** (after the dispositions produce v2 and the second-language edition is synced), five lanes | Skeptic | Stand on the opposite side of the rating. Using the report's own data and **changing parameters only, never formulas**, re-run the model and give the combination of assumptions that would flip the rating, with its evidence grade. Check that all scenarios use one discounting timing convention (`investigative.md` section 1). Also check that the owner of every judgment sentence is clear at a glance |
 | | Tradability | As above, but audit v2 only |
 | | Financials | Re-check only the model changes |
 | | Cross-edition consistency | After the alignment check shows zero differences, check the financial English and the definitions by hand, and compare Appendix C with `assets/disclaimer.md` word for word. Skip this lane if the report has one language edition |

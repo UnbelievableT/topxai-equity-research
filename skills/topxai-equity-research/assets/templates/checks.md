@@ -27,3 +27,9 @@
 | 19 | Cross-edition alignment check shows zero differences; the second edition contains zero characters of the source script | | |
 | 20 | (Updates) The prior-version settlement chapter is written; every ledger entry that came due is settled | | |
 | 21 | After publishing: all core judgments, the annual rating, and the monthly and quarterly outlooks are registered in the ledger; the series is added to `research/watch.json`; `python3 scripts/desk.py check` reports 0 uncovered | | |
+| 22 | The title is the claim, with a per-share impact; thesis and subtitle within their limits | | |
+| 23 | At least three new facts, each with a section in Part 1, an exhibit, and a landing point on the value bridge | | |
+| 24 | Part 3 takes management's public statements apart; Appendix A statement timeline complete | | |
+| 25 | `check_report.py` exits 0 for every edition (length, footnotes, exhibits, sentence density, internal codes) | | |
+| 26 | Verifiability lane: 30 footnotes and every exhibit source opened; text and numbers found at the stated location | | |
+| 27 | All scenarios use one discounting timing convention; per-share conversion states share basis, tax rate and discount rate | | |

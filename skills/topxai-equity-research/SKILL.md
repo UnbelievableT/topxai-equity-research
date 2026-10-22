@@ -6,7 +6,7 @@ compatibility: Python 3.9+ (standard library only). Network access to sec.gov an
 metadata:
   author: TopxAI
   homepage: https://ai.topxea.com
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # TopxAI Equity Research
@@ -40,9 +40,10 @@ placeholder, ask the user once for a name and email and supply it as `SEC_USER_A
 
 ## Hard rules (break one and the report does not ship)
 
-1. **Real data only.** Every key number traces to a source with a URL. If you cannot find it, write "not verified";
-   never fill the gap with an estimate presented as a reported figure.
-2. **Grade every piece of evidence.** [A] primary filings and exchange or company disclosures; [B] major news
+1. **Real data only, and checkable by the reader.** Every key number and every quotation carries a footnote to the page,
+   section or table, with a URL. If you cannot find it, write "not verified"; never fill the gap with an estimate presented
+   as a reported figure. Own calculations say so and point to the derivations appendix (`pipeline/03-writing.md`).
+2. **Grade every piece of evidence** (at the end of the footnote, not in body paragraphs). [A] primary filings and exchange or company disclosures; [B] major news
    organisations; [C] institutional estimates or your own calculation (say it is an estimate and show the formula);
    [D] unconfirmed reports. When sources disagree, show both; never pick one silently.
 3. **One basis date, in three layers.** Price basis = the latest *closed* trading session (an intraday price is not a
@@ -69,17 +70,23 @@ placeholder, ask the user once for a name and email and supply it as `SEC_USER_A
 12. **Register and settle every call.** Core conclusions, the annual rating and the monthly and quarterly outlooks
     all go into the ledger; a public track record shows all of them, the method, and "past performance does not
     indicate future results".
+13. **Claim first, with new facts.** The title is one falsifiable claim with a per-share impact. At kickoff, produce at
+    least three primary-source facts the market has not absorbed that change an input of the value bridge; without them,
+    do not publish (`references/investigative.md` sections 1-2). A report that only re-computes filed numbers does not ship.
+14. **Ordered by the argument, and short.** Claim, evidence, valuation, the company's account and the opposing case,
+    tracking; full coverage goes to an appendix. Body at most 15,000 words; key facts shown as screenshots of the original
+    with a red box; no internal codes in the text. `scripts/check_report.py` exits 0.
 
 ## Pipeline map
 
 | Step | What happens | Main outputs (`research/<report-id>/`) | Exit gate | Read |
 |---|---|---|---|---|
-| 1 Kickoff | Pick and scope the topic, compare candidates, read past lessons, fix the three basis dates and the benchmark | `notes-00-kickoff.md` | Evidence density and tradability both > 4/10, or a written "do not publish" with restart triggers | `references/pipeline/01-kickoff.md`, `references/framework.md` |
-| 2 Research | Lanes of research, an independent XBRL pull by the editor, a cross-check of all notes | `notes-*.md`, `data-*.json`, `notes-crosscheck.md` | Conflict list and gap list written; key numbers confirmed by two sources | `references/pipeline/02-research.md`, `references/equity.md` / `industry.md` / `macro.md`, `references/indicators.md` |
+| 1 Kickoff | One-sentence claim and value bridge, at least three new facts, compare candidates, read past lessons, fix the three basis dates and the benchmark | `notes-00-kickoff.md` | Claim with per-share impact and three or more new facts; evidence density and tradability both > 4/10; or a written "do not publish" with restart triggers | `references/pipeline/01-kickoff.md`, `references/investigative.md`, `references/framework.md` |
+| 2 Research | Lanes of research (including `records` and `statements`), an independent XBRL pull by the editor, a cross-check of all notes | `notes-*.md`, `data-*.json`, `notes-crosscheck.md` | Conflict list and gap list written; key numbers confirmed by two sources and recorded with location and verbatim text | `references/pipeline/02-research.md`, `references/investigative.md`, `references/equity.md` / `industry.md` / `macro.md`, `references/indicators.md` |
 | 2.5 Debate | Bull and bear each argue three points from the notes only, then rebut once | `debate-bull.md`, `debate-bear.md` | Both files with rebuttals | `references/pipeline/02-research.md` |
-| 3 Writing | Fixed chapter structure; valuation only from the model output | `parts/`, `calc/`, assembled report | Writing contract met; plain language | `references/pipeline/03-writing.md`, `references/quality-bar.md` |
+| 3 Writing | Ordered by the argument (title claim, summary, evidence, valuation, the company's account and the opposing case, tracking, appendices); footnotes; exhibits; valuation only from the model output | `parts/`, `exhibits/`, `calc/`, assembled report | `scripts/check_report.py` exits 0; writing contract met; plain language | `references/pipeline/03-writing.md`, `references/quality-bar.md` |
 | 3.5 Judgment | Consensus reconstruction → mispricing evidence → catalysts → settleable rating → decision chapter → evidence binding | inside the summary, valuation and decision chapters | `references/judgment.md` section 9 | `references/judgment.md` |
-| 4 Audit | Two rounds of adversarial review, including a skeptic and a cross-language check; every finding dispositioned | `audit-vN-*.md`, `audit-vN-decisions.md`, `checks.md` | No open blockers; revisions logged in the appendix | `references/pipeline/04-audit.md`, `references/pitfalls.md` |
+| 4 Audit | Two rounds of adversarial review, including verifiability, a skeptic and a cross-language check; every finding dispositioned | `audit-vN-*.md`, `audit-vN-decisions.md`, `checks.md` | No open blockers; revisions logged in the appendix | `references/pipeline/04-audit.md`, `references/pitfalls.md` |
 | 5 Publish | Deliverable structure, language-edition parity, final checks, register calls, add to the watch list | report files, ledger entries, `research/watch.json` | `ledger.py list` shows every call; `desk.py check` passes | `references/pipeline/05-publish.md` |
 | Watch | New filings against open falsifiers, price triggers, calls coming due | `research/desk/<date>.md` | Overdue items settled the same day | `references/desk.md` |
 | Settle | Settle due or triggered calls, one lesson each | `research/ledger.json`, `research/lessons.md` | Nothing left silently unsettled | `references/desk.md`, `references/judgment.md` section 7 |
@@ -89,6 +96,7 @@ placeholder, ask the user once for a name and email and supply it as `SEC_USER_A
 
 | File | What it is | When to read |
 |---|---|---|
+| `references/investigative.md` | Building the case: the claim and value bridge, where new facts hide, letting the company speak, getting times and places right, taking apart the company's account, how far inference may go, what not to copy | Before every kickoff |
 | `references/framework.md` | The core method: cause / process / outcome, fixed / probabilistic / unknown, who sets the price, the first-principles layer, the transmission chain, falsifiability, the eight required components | Before every report |
 | `references/quality-bar.md` | The quality bar: seven gates, the three-horizon outlook, the decision chapter, chart matching, audit routes | Before every report and before publishing |
 | `references/judgment.md` | From analysis to a settleable judgment: consensus, mispricing evidence E1–E5, catalysts, ratings, decision chapter, evidence binding, settlement, the degrade path, final checks | Before writing the conclusions and before publishing |
@@ -119,6 +127,8 @@ not raw notes. Brief templates are in `references/agents.md`.
 | `scripts/sec.py filings TICKER` / `sec.py feed` | Recent filings with 8-K items and links; new filings across the coverage list |
 | `scripts/ledger.py add / settle / void / list / stats` | The call ledger and settlement lessons (`research/ledger.json`, `research/lessons.md`) |
 | `scripts/desk.py run / check` | Coverage watch: filings matched to falsifiers, price triggers from your own price CSV, calls coming due |
+| `scripts/check_report.py` | Report form gate: body length, title-page claim, footnote sources, exhibits, sentence density, internal codes |
+| `scripts/exhibit.py` | Exhibits: crop a passage out of a filing (PDF, or HTML printed through Chrome) and box it in red; needs `pip install pymupdf` |
 | `scripts/check_skill.py` | Self-check for anyone editing this skill |
 
 ## Templates (`assets/templates/`)

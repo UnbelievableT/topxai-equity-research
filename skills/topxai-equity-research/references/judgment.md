@@ -92,6 +92,12 @@ The conclusion chapter states only the handling rule after a trigger and does no
   If the falsification condition triggers early, settle early. `too_early` is available only before expiry; after expiry it may not be used.
   Unsettled calls show as "pending settlement" in the track record. **Never leave a call silently unsettled**, and never suspend settlement because no updated version has been issued.
 - Still state that this is an **analytical judgment, not a buy or sell order**.
+- **The target price comes from the value bridge** (since 1.1.0, `investigative.md` section 1). Each of up to three
+  outcomes is one sentence of trigger plus a per-share value. Every per-share conversion states the share count basis
+  (cover-page count and date), tax rate, discount rate and timing convention, and **all scenarios use one timing
+  convention** (one timing function in `calc/model.py`). Otherwise the higher scenario is overstated: recomputing one
+  published report under its own assumptions, its higher scenario discounted "year three" over two periods and its lower
+  scenario over three, which put the higher figure about a tenth too high.
 
 ---
 

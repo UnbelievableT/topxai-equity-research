@@ -22,6 +22,11 @@ a three-dimensional task, not a single line of enquiry. A dimension left out mea
 The subject is **the company as a whole plus its position in its industry**. You need both coordinates. For each
 item below, decide whether the information is obtainable, and record the decision.
 
+Since 1.1.0 this checklist is the standard for the **notes**, not the report's table of contents: one line per dimension
+goes into the full-coverage appendix (finding, whether it affects the claim, source), and the body keeps what serves the
+claim (`pipeline/03-writing.md`, "The report form"). Beyond the checklist, look for **new facts** in primary records
+outside the SEC statements and in the company's own earlier words (`investigative.md` sections 2 and 3).
+
 ### A. Inside the company (the vertical cut)
 
 | Dimension | Question that must be answered | Primary source |
@@ -104,6 +109,10 @@ Headlines and prose should read like professional research, not like a podcast o
    - **Banned patterns.** Run a case-insensitive grep and require zero hits: `grep -nEi "it is worth noting|interestingly|it should be (pointed out|noted)|let us look|however, (things are|it is) not so simple|you may ask|the reader (needs|must)|simply put|think of it as" report.md`. Count "this report believes" chapter by chapter: at most one per chapter. Also remove filler, hype and templated phrasing that the grep does not catch.
    - The style audit route in Gate 7 starts from the output of these two steps and reviews false positives. It does not re-read the whole text by eye for banned words.
 5. **Use desk vocabulary** ("basis", "exposure", "delivered", "settled", "implied"). Do not use explainer tone.
+6. **Sources, sentences and codes** (since 1.1.0; details in `pipeline/03-writing.md`). Every key number and quotation is
+   footnoted to a page, section or table with a URL; the grade sits at the end of the note, not in body paragraphs; two or
+   three numbers per sentence at most; internal codes (judgment, cross-check, mispricing-evidence and model-section numbers)
+   stay out of the text. `python3 scripts/check_report.py <report>.md` exits 0.
 
 ---
 
@@ -128,6 +137,7 @@ table instead of approximating.
 | Transmission mechanism | A flow diagram, with an observation point on every layer and an observability state (ok / broken / blind) | A plain text chain |
 | One striking number | The number plus one comparison line, as a single tile or as bold text in the body with the comparison in the same sentence | A chart drawn for one number |
 | One-page overview | A dashboard (below) | A static table of numbers; dark blocks |
+| Showing what the company said, did or wrote | A screenshot of the original with a red box; title states the conclusion; source gives the page or section and says the box was added (`scripts/exhibit.py`) | Paraphrase; our own chart dressed up as an original |
 
 **Three-scenario price ladder** (use it in place of a loose three-scenario sketch). Specification:
 - A vertical price axis, ordered bottom to top: downside price, then current price (a heavy anchor line), then base price, then upside price.
@@ -185,6 +195,9 @@ written for retail investors. It reorganises these items:
 4. **Position-sizing and risk-budget framework.** Tiers of exposure by strength of conviction (evidence grade x catalyst density): core, tactical, watch. State plainly that this is a framework, not an allocation recommendation.
 5. **Review rhythm.** Which dates the analyst must come back (earnings dates, catalyst dates) and what is settled at each review.
 
+In the 1.1.0 report form these five items sit in tables in Part 4, "Tracking and settlement"; they are not a chapter of
+their own (`pipeline/03-writing.md`).
+
 Compliance is unchanged. Everything is research content, aimed at no particular investor, with no buy or sell
 wording. See `assets/disclaimer.md`.
 
@@ -232,7 +245,11 @@ Gate 1 with the "must answer" availability decisions in each step of `references
 `references/macro.md`; run the window-dressing checklist and the target-date cash ledger only for the core
 companies the report looks into. Record in the self-check what you substituted.
 
-- [ ] Gate 1, every dimension in A and B: answered, or judged unobtainable and written into Known limitations.
+- [ ] The title is the claim, with a per-share impact; thesis paragraph and subtitle within their limits; a reader can restate the claim after the summary (`check_report.py`).
+- [ ] At least three new facts, each with a section in Part 1, an exhibit, and a landing point on the value bridge (`investigative.md` sections 1 and 2).
+- [ ] Part 3 takes management's public statements apart one by one; Appendix A holds the company's statements over time.
+- [ ] `check_report.py` exits 0 for every edition (length, footnotes, exhibits, sentence density, internal codes); the verifiability lane opened 30 footnotes and found every one at its stated location.
+- [ ] Gate 1, every dimension in A and B: answered, or judged unobtainable and written into Known limitations; findings collected in the full-coverage appendix.
 - [ ] Every undisclosed metric has been through the three steps (why / who questioned it / substitute basis).
 - [ ] Zero decorative metrics: each headline metric has processing, a series and a comparison.
 - [ ] The derivations appendix holds the derivation of every self-computed number, including the period-by-period target-date cash ledger (source of funds and target-date assets on one set of accounts).
@@ -243,4 +260,4 @@ companies the report looks into. Record in the self-check what you substituted.
 - [ ] The three-horizon outlook is complete (monthly, quarterly, annual). The decision chapter is in operating-research format.
 - [ ] The bull/bear debate was run before the rating was set (`debate-bull.md` and `debate-bear.md` are in the report folder). Where the rating is not neutral, the bear side's first three points are answered one by one in the body.
 - [ ] After release, the ledger is complete: the core calls, the annual rating, and the monthly and quarterly outlooks (`scripts/ledger.py add ... --tier`). `research/watch.json` includes the series, and `python3 scripts/desk.py check` returns 0.
-- [ ] Both audit rounds are done (round 1: four routes including presentation and prose; round 2: includes the skeptic and bilingual consistency; all seven scopes had a reviewer), and the revisions are in the Appendix C revision log (original wording, revised wording, nature of the change).
+- [ ] Both audit rounds are done (round 1: five routes including presentation and prose, and verifiability; round 2: includes the skeptic and bilingual consistency; all seven scopes had a reviewer), and the revisions are in the Appendix C revision log (original wording, revised wording, nature of the change).

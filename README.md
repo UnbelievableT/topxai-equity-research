@@ -8,9 +8,11 @@ An agent skill that runs a research desk: it takes a company, a value chain or a
 finished report, makes every conclusion falsifiable, puts a bull/bear debate in front of every rating, audits the
 draft adversarially, and then keeps a ledger that settles each call when it comes due.
 
-It is built for research a professional reader would pay for. Every key number traces to a primary source with an
-evidence grade, valuation numbers come from one model file, and ratings are stated so they can be settled: twelve
-months, against a named benchmark, from the publication-date close.
+It is built for research a professional reader would pay for. A report leads with one claim and its value per share,
+argues it with facts dug out of primary records, and lets the reader check every source: each key number is footnoted
+to the page with a link and an evidence grade, and the company's own documents are shown with the sentence boxed in red.
+Valuation numbers come from one model file, and ratings are stated so they can be settled: twelve months, against a
+named benchmark, from the publication-date close.
 
 [中文说明](README.zh-CN.md) · Apache-2.0 · Made by [TopxAI](https://ai.topxea.com)
 
@@ -21,17 +23,25 @@ months, against a named benchmark, from the publication-date close.
 - **A method, not a template.** Cause / process / outcome analysis, a first-principles layer, a transmission chain
   from liquidity to the single stock, consensus reconstruction from prices, mispricing evidence, catalyst paths,
   and an evidence-strength rule that stops weak inputs from carrying strong conclusions.
+- **A report form built to be checked** (new in 1.1): the title is the claim with a per-share figure; at least three
+  new facts from records beyond the 10-Q (8-K exhibits, regulatory dockets, court files, permits, the company's own
+  earlier statements, measurements); sections ordered by the argument; every number footnoted to the page; screenshots of
+  original documents with a red box; a body of at most 15,000 words.
 - **Nine-step flows** for single-stock, industry / value-chain and macro reports.
 - **An indicator and data-source library** (SEC EDGAR, FRED, BLS, Census, FINRA and more), each indicator tagged as a
   cause, a process or an outcome, and a **catalogue of measurement and accounting traps** found in real reports.
 - **Five agents** for Claude Code and Cowork: research collector, bull, bear, auditor and translator. They cannot spawn
   their own subagents and hand back at most 120 words, so the editor's context stays clean. On agents without
   subagents, the main agent plays each role in turn.
-- **Small, dependency-free tools** (Python 3.9+, standard library):
+- **Small tools** (Python 3.9+; all standard library except `exhibit.py`):
   - `sec.py`: the last eight quarters of revenue, margins, cash flow and capex, plus cash, debt, RPO and shares, from
     SEC XBRL. The raw multi-megabyte JSON stays in a cache; the agent sees about 3 KB.
   - `ledger.py`: an append-only ledger of calls with settlement, a lesson per settlement, and an honest hit rate.
   - `desk.py`: a coverage watch that matches new SEC filings to open falsifiers and lists calls coming due.
+  - `check_report.py`: a form gate for the finished report: length, the title-page claim, footnotes with links and page
+    locators, exhibits, sentences overloaded with numbers, internal codes leaking into the text.
+  - `exhibit.py`: crops a passage out of a filing (PDF, or HTML printed through a local Chrome), boxes the sentence in
+    red and reports the page to cite. Needs `pip install pymupdf`.
 - **Templates** for the kickoff note, the source cross-check, the writing contract, audit decisions, final checks,
   ledger entries and the watch list, plus a disclosure template.
 
@@ -93,8 +103,9 @@ The rules that matter most:
 
 ## Data, network and privacy
 
-- The only network calls are from `sec.py` and `desk.py` to `https://www.sec.gov` and `https://data.sec.gov`, sending
-  the `SEC_USER_AGENT` you provide. Nothing else is sent anywhere.
+- `sec.py` and `desk.py` call only `https://www.sec.gov` and `https://data.sec.gov`, sending the `SEC_USER_AGENT` you
+  provide. `exhibit.py` downloads only the document URL you pass it (with your `SEC_USER_AGENT` for sec.gov, a regular
+  browser user agent elsewhere) and caches it under `research/cache/exhibits/`. Nothing else is sent anywhere.
 - All files are written inside your project's `research/` folder. There is no telemetry and no account.
 - Prices for the coverage watch come from a CSV you supply; the tools do not scrape market data.
 
