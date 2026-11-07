@@ -14,7 +14,7 @@ to the page with a link and an evidence grade, and the company's own documents a
 Valuation numbers come from one model file, and ratings are stated so they can be settled: twelve months, against a
 named benchmark, from the publication-date close.
 
-[中文说明](README.zh-CN.md) · Apache-2.0 · Made by [TopxAI](https://ai.topxea.com)
+[中文说明](README.zh-CN.md) · Apache-2.0 · Made by [TopxAI](https://ai.topxea.com?utm_source=github&utm_medium=readme&utm_campaign=topxai-equity-research)
 
 ## What you get
 
