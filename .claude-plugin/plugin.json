@@ -1,22 +1,22 @@
 {
   "name": "topxai-equity-research",
   "displayName": "TopxAI Equity Research",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Institutional-grade equity, industry and macro research for AI agents: primary-filing data, falsifiable calls, a bull/bear debate before every rating, adversarial audits, and a ledger that settles every call.",
   "author": {
     "name": "TopxAI",
-    "email": "support@topxea.com",
-    "url": "https://ai.topxea.com"
+    "email": "support@topxai.xyz",
+    "url": "https://api.topxai.xyz"
   },
-  "homepage": "https://ai.topxea.com",
+  "homepage": "https://api.topxai.xyz/labs/topxai-equity-research",
   "repository": "https://github.com/UnbelievableT/topxai-equity-research",
   "license": "Apache-2.0",
   "keywords": ["equity-research", "investment-research", "sec-edgar", "xbrl", "financial-analysis", "valuation", "stock-analysis", "research-workflow", "agent-skills"],
   "icon": "./assets/logo.png",
   "documentationUrl": "https://github.com/UnbelievableT/topxai-equity-research#readme",
   "supportUrl": "https://github.com/UnbelievableT/topxai-equity-research/issues",
-  "privacyPolicyUrl": "https://ai.topxea.com/privacy",
-  "termsOfServiceUrl": "https://ai.topxea.com/terms",
+  "privacyPolicyUrl": "https://api.topxai.xyz/privacy-policy",
+  "termsOfServiceUrl": "https://api.topxai.xyz/user-agreement",
   "userConfig": {
     "sec_user_agent": {
       "type": "string",

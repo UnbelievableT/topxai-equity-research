@@ -1,7 +1,7 @@
 {
   "name": "topxai",
-  "owner": { "name": "TopxAI", "url": "https://ai.topxea.com" },
-  "metadata": { "description": "Agent plugins from TopxAI (ai.topxea.com)." },
+  "owner": { "name": "TopxAI", "url": "https://api.topxai.xyz" },
+  "metadata": { "description": "Agent plugins from TopxAI (api.topxai.xyz)." },
   "plugins": [
     {
       "name": "topxai-equity-research",

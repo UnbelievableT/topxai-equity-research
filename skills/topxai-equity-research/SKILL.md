@@ -5,8 +5,8 @@ license: Apache-2.0
 compatibility: Python 3.9+ (standard library only). Network access to sec.gov and data.sec.gov for the bundled SEC tool. Subagents are optional (Claude Code, Cowork); other agents run the roles in sequence.
 metadata:
   author: TopxAI
-  homepage: https://ai.topxea.com
-  version: "1.1.0"
+  homepage: https://api.topxai.xyz/labs/topxai-equity-research
+  version: "1.1.1"
 ---
 
 # TopxAI Equity Research

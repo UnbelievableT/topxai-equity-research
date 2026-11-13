@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.1.1 (2026-11-13)
+
+TopxAI moved to api.topxai.xyz. No change to the skill's method or tools.
+
+- Plugin and marketplace metadata, the skill's `homepage`, the READMEs and `NOTICE` point to `api.topxai.xyz`; the
+  support address is `support@topxai.xyz`.
+- The plugin's privacy policy and terms links now open the pages that exist: `/privacy-policy` and `/user-agreement`.
+- The READMEs no longer link to the research page, which has closed.
+
 ## 1.1.0 (2026-10-23)
 
 A new report form, after reading a 54-page investigative report next to our own deep dives.

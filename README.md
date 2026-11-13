@@ -14,7 +14,7 @@ to the page with a link and an evidence grade, and the company's own documents a
 Valuation numbers come from one model file, and ratings are stated so they can be settled: twelve months, against a
 named benchmark, from the publication-date close.
 
-[中文说明](README.zh-CN.md) · Apache-2.0 · Made by [TopxAI](https://ai.topxea.com?utm_source=github&utm_medium=readme&utm_campaign=topxai-equity-research)
+[中文说明](README.zh-CN.md) · Apache-2.0 · Made by [TopxAI](https://api.topxai.xyz?utm_source=github&utm_medium=readme&utm_campaign=topxai-equity-research)
 
 ## What you get
 
@@ -61,7 +61,7 @@ named benchmark, from the publication-date close.
 npx skills add UnbelievableT/topxai-equity-research
 ```
 
-**Manual**: download the package from [ai.topxea.com/labs](https://ai.topxea.com/labs) or from the
+**Manual**: download the package from [api.topxai.xyz/labs](https://api.topxai.xyz/labs/topxai-equity-research) or from the
 [GitHub releases](https://github.com/UnbelievableT/topxai-equity-research/releases), and copy
 `skills/topxai-equity-research/` into your agent's skills folder (for Claude Code, `~/.claude/skills/`).
 
@@ -117,10 +117,10 @@ anything you publish, and consult a licensed professional before acting on resea
 
 ## About TopxAI
 
-TopxAI ([ai.topxea.com](https://ai.topxea.com)) gives developers Claude, GPT, Grok, GLM, Kimi, DeepSeek and image
+TopxAI ([api.topxai.xyz](https://api.topxai.xyz)) gives developers Claude, GPT, Grok, GLM, Kimi, DeepSeek and image
 and video models through one OpenAI- and Anthropic-compatible API, with fixed USD prices and prepaid credit. This
-skill is the method behind the research published at [topxea.com/research](https://topxea.com/research), shared for
-free. More free tools: [ai.topxea.com/labs](https://ai.topxea.com/labs).
+skill is the method behind TopxAI's own research reports, shared for free. More free tools:
+[api.topxai.xyz/labs](https://api.topxai.xyz/labs).
 
 Issues and suggestions: [GitHub issues](https://github.com/UnbelievableT/topxai-equity-research/issues).
 

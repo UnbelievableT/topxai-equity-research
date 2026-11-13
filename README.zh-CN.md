@@ -11,7 +11,7 @@
 每个关键数字都用脚注写到页并附链接和证据等级，公司自己的文件直接截图、把那句话框成红框，读者可以逐条核对。
 估值只从一份模型文件里取数。评级要能结算，写明 12 个月、对哪个基准、从发布日收盘起算；每条核心结论都写出「什么情况下我错了」。
 
-英文说明见 [README.md](README.md)，以英文版为准。许可证 Apache-2.0，由 [TopxAI](https://ai.topxea.com) 制作并免费开放。
+英文说明见 [README.md](README.md)，以英文版为准。许可证 Apache-2.0，由 [TopxAI](https://api.topxai.xyz) 制作并免费开放。
 
 ## 里面有什么
 
@@ -49,7 +49,7 @@ Claude Code（插件，含五个 agent）:
 npx skills add UnbelievableT/topxai-equity-research
 ```
 
-也可以从 [ai.topxea.com/labs](https://ai.topxea.com/labs) 或 GitHub Releases 下载完整包，把 `skills/topxai-equity-research/`
+也可以从 [api.topxai.xyz/labs](https://api.topxai.xyz/labs/topxai-equity-research) 或 GitHub Releases 下载完整包，把 `skills/topxai-equity-research/`
 复制到你的 agent 的技能目录(Claude Code 是 `~/.claude/skills/`)。
 
 ## 第一次用
@@ -80,8 +80,8 @@ export SEC_USER_AGENT="Zhang San zhangsan@example.com"
 
 ## 关于 TopxAI
 
-TopxAI([ai.topxea.com](https://ai.topxea.com))用一个兼容 OpenAI 和 Anthropic 的接口提供 Claude、GPT、Grok、GLM、
-Kimi、DeepSeek 以及图像和视频模型，美元定价，预付余额。[topxea.com/research](https://topxea.com/research) 上的研究报告
-就是按这套方法做的，这里把方法免费公开。更多免费工具在 [ai.topxea.com/labs](https://ai.topxea.com/labs)。
+TopxAI([api.topxai.xyz](https://api.topxai.xyz))用一个兼容 OpenAI 和 Anthropic 的接口提供 Claude、GPT、Grok、GLM、
+Kimi、DeepSeek 以及图像和视频模型，美元定价，预付余额。TopxAI 自己的研究报告就是按这套方法做的，这里把方法免费公开。
+更多免费工具在 [api.topxai.xyz/labs](https://api.topxai.xyz/labs)。
 
 问题和建议请提到 [GitHub issues](https://github.com/UnbelievableT/topxai-equity-research/issues)。
