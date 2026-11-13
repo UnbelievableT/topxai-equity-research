@@ -6,7 +6,7 @@ compatibility: Python 3.9+ (standard library only). Network access to sec.gov an
 metadata:
   author: TopxAI
   homepage: https://api.topxai.xyz/labs/topxai-equity-research
-  version: "1.1.1"
+  version: "1.1.2"
 ---
 
 # TopxAI Equity Research

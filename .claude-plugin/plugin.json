@@ -1,7 +1,7 @@
 {
   "name": "topxai-equity-research",
   "displayName": "TopxAI Equity Research",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Institutional-grade equity, industry and macro research for AI agents: primary-filing data, falsifiable calls, a bull/bear debate before every rating, adversarial audits, and a ledger that settles every call.",
   "author": {
     "name": "TopxAI",

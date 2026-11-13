@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.2 (2026-11-13)
+
+The README banner still showed the old address. No change to the skill's method or tools.
+
+- `assets/banner.png` now reads `api.topxai.xyz`; the picture is otherwise the same.
+
 ## 1.1.1 (2026-11-13)
 
 TopxAI moved to api.topxai.xyz. No change to the skill's method or tools.
